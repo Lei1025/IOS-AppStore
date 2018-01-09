@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Featured : Decodable{
+class FeaturedApps : Decodable{
     var bannerCategory : AppCategory
     var categories : [AppCategory]?
 }
@@ -19,7 +19,7 @@ class AppCategory: Decodable{
     var apps : [App]?
     var type : String?
     
-    static func fetchFeaturedApps(completionHandler: @escaping ([AppCategory]) -> ()) {
+    static func fetchFeaturedApps(completionHandler: @escaping (FeaturedApps) -> ()) {
         let urlString = "https://api.letsbuildthatapp.com/appstore/featured"
         let url = URL(string: urlString)!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -28,14 +28,13 @@ class AppCategory: Decodable{
             }
             guard let data = data else { return }
             do {
-                let json = try JSONDecoder().decode(Featured.self, from: data)
+                let json = try JSONDecoder().decode(FeaturedApps.self, from: data)
                 
-                var appCategories = [AppCategory]()
-                appCategories = json.categories!
-                print(appCategories)
+                var featuredApps : FeaturedApps
+                featuredApps = json
                 
                 DispatchQueue.main.async {
-                    completionHandler(appCategories)
+                    completionHandler(featuredApps)
                 }
         
             }catch let err{
