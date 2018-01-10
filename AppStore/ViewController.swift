@@ -28,7 +28,6 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
             self.collectionView?.reloadData()
             }
 
-        
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(LargeCategoryCell.self, forCellWithReuseIdentifier: largeCellId)
@@ -36,6 +35,15 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+
+    
+    func showAppDetailForApp(app: App){
+        let layout = UICollectionViewFlowLayout()
+        let appDeatilController = AppDetailController(collectionViewLayout: layout)
+        appDeatilController.app = app
+        navigationController?.pushViewController(appDeatilController, animated: true)
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = appCategories?.count else { return 0 }
@@ -46,11 +54,13 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
         if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largeCellId, for: indexPath) as! LargeCategoryCell
             cell.appCategory = appCategories?[indexPath.item]
+            cell.featuredAppController = self
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
         cell.appCategory = appCategories?[indexPath.item]
+        cell.featuredAppController = self
         return cell
     }
     

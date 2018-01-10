@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
+    var featuredAppController : FeaturedAppsController?
+    
     var appCategory: AppCategory? {
         didSet { //https://www.hackingwithswift.com/read/8/5/property-observers-didset
             if let name = appCategory?.name {
@@ -69,6 +71,11 @@ class CategoryCell: UICollectionViewCell,UICollectionViewDataSource,UICollection
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-14-[v0]-0-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : dividerLineView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v0]-0-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : appColletionView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[namelabel(30)][v0][v1(0.5)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : appColletionView, "v1": dividerLineView, "namelabel": nameLabel]))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let app = appCategory?.apps![indexPath.item] else { return }
+        featuredAppController?.showAppDetailForApp(app: app)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
