@@ -76,9 +76,17 @@ class AppCategory: Decodable{
 }
 
 class App: Decodable{
-    var Id: Double? //NSNumber
+    var Id: Int? //NSNumber
     var Name: String?
     var Category: String?
     var ImageName: String?
     var Price: Double? //NSNumber
+    var Screenshots: [String]?
+    var description: String?
+    var appInfomation: [AppInfomation]?
+}
+
+class AppInfomation: Decodable{
+    var Name : String?
+    var Value: String?
 }

@@ -142,7 +142,7 @@ class LargeCategoryCell : CategoryCell{
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: frame.height - 32)
+        return CGSize(width: 240, height: frame.height - 32)
     }
     
     private class LargeAppCell : AppCell {
