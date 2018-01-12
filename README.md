@@ -15,3 +15,5 @@ Fetched JSON data from a REST API service and processed data with Model Objects
 Built UI and performed Segue programmatically
 
 Parsed JSON in Swift 4 with new protocol – Decodable
+
+![alt text](https://github.com/Lei1025/AppStore/blob/master/Featured%20Apps%20Page%20Screenshot.png?raw=true)
