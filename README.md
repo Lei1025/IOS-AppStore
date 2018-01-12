@@ -2,7 +2,7 @@
 
 This is a self-motivated project that an iOS app in terms of UI and functions are similar to Featured Apps page on App Store.
 
-Skills Used:
+##Skills Used:
 
 Model–View–Viewmodel (MVVM) as architectural pattern
 
@@ -16,7 +16,7 @@ Built UI and performed Segue programmatically
 
 Parsed JSON in Swift 4 with new protocol – Decodable
 
-ScreenShots:
+##ScreenShots:
 
 ![alt text](https://github.com/Lei1025/AppStore/blob/master/Featured%20Apps%20Page%20Screenshot.png?raw=true)
 
