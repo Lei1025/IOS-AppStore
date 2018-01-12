@@ -18,6 +18,6 @@ Parsed JSON in Swift 4 with new protocol – Decodable
 
 ## ScreenShots:
 
-![](https://raw.githubusercontent.com/Lei1025/AppStore/master/Featured%20Apps%20Page%20Screenshot.png =250x)
+![](https://raw.githubusercontent.com/Lei1025/AppStore/master/Featured%20Apps%20Page%20Screenshot.png =100x100)
 
-![](https://raw.githubusercontent.com/Lei1025/AppStore/master/App%20Details%20Page%20Screenshot.png =250x)
+![](https://raw.githubusercontent.com/Lei1025/AppStore/master/App%20Details%20Page%20Screenshot.png)
