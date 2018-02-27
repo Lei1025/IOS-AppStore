@@ -8,7 +8,7 @@ Model–View–Viewmodel (MVVM) as architectural pattern
 
 Basic layout structure built by using UICollectionView and UICollectionViewFlowLayout
 
-Reused UICollectionView with Headers
+Reused UICollectionView with Headers to ensure code neat and readable
 
 Fetched JSON data from a REST API service and processed data with Model Objects
 
