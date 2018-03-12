@@ -154,8 +154,7 @@ class AppDetailHeader: BaseCell{
                 let priceStr = String(format: "%.2f", price)
                 buyButton.setTitle("$\(priceStr)", for: UIControlState.normal)
             }
-            
-            
+                        
         }
         
     }
