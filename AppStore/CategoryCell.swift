@@ -120,7 +120,8 @@ class AppCell:UICollectionViewCell{
             }
             categoryLabel.text = app?.Category
             if let price = app?.Price{
-                priceLabel.text = "$\(price)"
+                let priceStr = String(format: "%.2f", price)
+                priceLabel.text = "$\(priceStr)"
             }else{
                 priceLabel.text = ""
             }

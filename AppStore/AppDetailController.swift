@@ -150,8 +150,11 @@ class AppDetailHeader: BaseCell{
             imageView.image = UIImage(named: (app?.ImageName)!)
             nameLabel.text = app?.Name
             
-            let price = app?.Price
-            buyButton.setTitle("$\(String(describing: price))", for: UIControlState.normal)
+            if let price = app?.Price{
+                let priceStr = String(format: "%.2f", price)
+                buyButton.setTitle("$\(priceStr)", for: UIControlState.normal)
+            }
+            
             
         }
         
